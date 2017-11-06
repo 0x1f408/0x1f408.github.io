@@ -5,4 +5,5 @@ _site
 
 # Temporary:
 assets/*.gemspec
+JEKYLL_NEW.md
 
