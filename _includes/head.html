@@ -1,0 +1,20 @@
+<!-- using https://github.com/mdo/jekyll-example/blob/gh-pages/_includes/head.html as an example -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>
+        {% if page.title == "home" %}
+            {{ site.title }}
+        {% else %}
+            {{ page.title }}
+        {% endif %}
+    </title>
+
+    <link rel="stylesheet" href="/css/bootstrap.css"><!-- @todo: replace this with the minimized version -->
+    <link rel="stylesheet" href="/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>

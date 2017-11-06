@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<ul id="social-sites">
+    <!-- data located in _data/sites.yml -->
+    {% for profile in site.data.sites %}
+    <li>
+        <a href="{{ profile.link }}">
+            <img src="{{ site.assets }}/img/{{ profile.icon }}" alt="{{ profile.site }}"/>
+            {{ profile.username }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>

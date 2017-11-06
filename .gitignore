@@ -1,0 +1,8 @@
+_site
+.sass-cache
+.jekyll-metadata
+.idea
+
+# Temporary:
+assets/*.gemspec
+

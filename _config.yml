@@ -1,0 +1,79 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: 0x1f408 Design
+#logo:
+#header:
+#logo_title:
+#logo_tab:
+# Leave email unavailable for now
+# email: your-email@example.com
+description: > # this means to ignore newlines until "baseurl:"
+  Home page and project listing for 0x1f408, an Atlanta-based designer & web developer.
+baseurl: "" # the subpath of your site, e.g. /blog
+# @todo: enable SSL/https for github-pages
+url: "http://0x1f408.me" # the base hostname & protocol for your site, e.g. http://example.com
+
+# This probably isn't needed, but I wanted to add an easy way to grab year for copyright info, etc.
+year: 2017
+
+# Do we also want to add something to define when the site was last updated?
+# We could probably define the above (`year`) with the same
+#last_update:
+
+# Where do we look for assets? (images, js, etc)
+assets: "/assets" # Make sure this doesn't have a following "/".
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+
+kramdowm:
+  input: GFM
+  hard_wrap: false
+
+sass:
+  style: compressed
+
+exclude:
+  - .git/
+  - .idea/
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+
+# List our projects:
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      author: "0x1f408"
+      title: :name
+  -
+    scope:
+      path: "projects"
+      type: "pages"
+    values:
+      layout: "project"
+      title: :name
