@@ -24,10 +24,13 @@ group :jekyll_plugins do
 end
 
 group :development do
-  gem "jekyll-livereload"  # enable livereload in developmentv
+  # todo: find a better workaround than `if Gem.win_platform`; maybe define ':lowpower' group?
+  # this is just a quick fix, since one of our development machines (running Debian)
+  # is much lower power than our main machine (running Windows)
+  gem "jekyll-livereload" if Gem.win_platform?  # enable livereload in development
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] if Gem.win_platform?
 
 # Avoid polling for changes (Windows)
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?

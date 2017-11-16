@@ -38,7 +38,7 @@ assets: "/assets" # Make sure this doesn't have a following "/".
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge # gh-pages does not support pygments
 
 kramdowm:
   input: GFM
@@ -59,7 +59,7 @@ exclude:
 collections:
   projects:
     output: true
-    permalink: /projects/:name/
+    permalink: /project/:name/
 
 defaults:
   -
