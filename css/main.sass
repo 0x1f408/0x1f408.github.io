@@ -13,8 +13,8 @@ $cutoff-lg: 1200px //less than: 992-1199
 //anything >=1200px is XL
 
 // color definitions
-$background: #ffffff  // later: dark grey
-$background-sidebar: #464646
+// todo: still need to work on these
+$background: #464646 // later: dark grey
 $text: #000000 // later: off-white?
 $text-accent: orange // later: better orange-ish color?
 $text-highlight: #fff
@@ -23,93 +23,98 @@ $sidebar-highlight: #000000 // later: light grey
 $borders-dark: #ffffff
 $borders-light: #000000
 
-// I don't think we actually need all of these; we could probably get away with two offset values - 0 and 8px
-$offset: 8em
+// Default amount to offset components in the x- and y-axes
+$offset-x: 8em
+$offset-y: 5em
 
 // hard "nope" on horizontal scrollbars
 body
   overflow-x: hidden
+  margin: 0
+  padding: 1px
+  background-color: $background
+  min-width: 100%
+  min-height: 100%
+
+code
+  display: inline-block
+  color: $text-highlight
+  background-color: $sidebar-highlight
+
+a
+  text-decoration: none
 
 // hard "nope" on bullets
-ul
-  list-style-type: none !important
+ul, ol, li
+  list-style: none !important
+  padding-left: 0
+  display: block
+  > ul, ol
+    padding-left: 0.667em
 
+// Window width < $cutoff-md
 @media (max-width: $cutoff-md)
+  .site-header
+    .site-title-wrapper
+      min-height: 2.5em
   .sidebar-container
     .navbar-toggler
       visibility: visible
     #sidebar-collapse
       visibility: hidden
+  #content-main
+    padding-left: 0
 
-
-
+// Window width >= $cutoff-md
 @media (min-width: $cutoff-md)
   .sidebar-container
     max-width: 8.333333%
-    min-width: $offset
+    min-width: $offset-x
     .navbar-toggler
       visibility: hidden
     #sidebar-collapse
       visibility: visible
-  #content-main
-    max-width: 91.666667%
-    margin-left: $offset
 
 @media (min-width: $cutoff-lg)
   #content-main
     max-width: 83.333333%
     margin: 0 auto
 
+// Site header (title bar, any links, etc)
+.site-header
+  .site-title-wrapper
+    min-height: 5em
+
 // side navbar (corrected)
 .sidebar-container
+  position: relative
   .sidebar
+    position: absolute
+    max-width: $offset-x
+    float: left
+    z-index: 3
+    transition: all 0.5s ease
     .sidebar-header > img
       min-width: 100%
       max-width: 100%
       max-height: 40px
     .sidebar-collapsible
-      background-color: $background-sidebar
       ul
         background-color: inherit
+        display: block
         a
-          text-decoration: none
-          display: block
-          width: 100%
-          height: 100%
+          clear: left
+          display: inherit
           &:visited
             color: unset
           &:hover
             color: $text-highlight
             background-color: $sidebar-highlight
-        > li
-          text-decoration: none
-          list-style-type: none
-          display: block
-
-
-// side navbar (old)
-// todo: replace this with the above
-.navbar .navbar-vertical
-  position: fixed
-  float: left
-  top: 0
-  overflow-x: hidden
-  z-index: 3
-  min-height: 100%
-  min-width: 100%
-  max-width: 100%
-  transition: all 0.5s ease
-  li a
-    clear: left
-
-  #sidebar-copyright
-    font-size : 70%
-    p
-      border-spacing: 0
-      padding: 0
-      line-height: 0
-  //@todo: over-ride Bootstrap's Justification & use of flex-box for navbar elements
-
+    #sidebar-copyright
+      font-size : 70%
+      p
+        border-spacing: 0
+        padding: 0
 
 // clearfix hack
 .clearfix
@@ -123,7 +128,8 @@ ul
 // main body of content
 #content-main
   position: relative
-
+  margin-left: $offset-x
+  max-width: 91.666667%
 
 
 

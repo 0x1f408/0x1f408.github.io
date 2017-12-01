@@ -62,7 +62,7 @@ collections:
     permalink: /project/:name/
   keys:
     output: true
-    permalink: /keys/:name/
+    permalink: /key/:name/
 
 defaults:
   -
@@ -72,14 +72,12 @@ defaults:
     values:
       layout: "default"
       author: "0x1f408"
-      title: :name
   -
     scope:
       path: "project"
       type: "pages"
     values:
       layout: "project"
-      title: :name
   -
     scope:
       path: "keys"

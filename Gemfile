@@ -25,6 +25,7 @@ end
 
 # Windows-specific:
 if Gem.win_platform?
+  puts "Windows platform detected, installing..."
   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -33,6 +34,8 @@ if Gem.win_platform?
 
   group :development do
     # enable livereload in development
+    # Note: this is listed here as Windows-specific due to our portable development
+    # machine (Debian Jessie) being substantially weaker than the main one (Win7)
     gem "jekyll-livereload"
   end
 end
