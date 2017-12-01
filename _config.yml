@@ -38,7 +38,7 @@ assets: "/assets" # Make sure this doesn't have a following "/".
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
 kramdowm:
   input: GFM
