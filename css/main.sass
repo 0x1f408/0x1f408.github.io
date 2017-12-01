@@ -2,7 +2,7 @@
 ---
 
 //the above lines are required for Jekyll
-// @todo: define our font stack
+// todo: define our font stack
 // $font-stack:
 
 // bootstrap @media cutoffs
@@ -14,10 +14,12 @@ $cutoff-lg: 1200px //less than: 992-1199
 
 // color definitions
 $background: #ffffff  // later: dark grey
+$background-sidebar: #464646
 $text: #000000 // later: off-white?
 $text-accent: orange // later: better orange-ish color?
-$anchor: blue // later: llighter blue (cyan-ish)
-$highlight: #000000 // later: light grey
+$text-highlight: #fff
+$anchor: blue // later: lighter blue (cyan-ish)
+$sidebar-highlight: #000000 // later: light grey
 $borders-dark: #ffffff
 $borders-light: #000000
 
@@ -33,16 +35,22 @@ ul
   list-style-type: none !important
 
 @media (max-width: $cutoff-md)
-  .navbar-toggler
-    visibility: visible
+  .sidebar-container
+    .navbar-toggler
+      visibility: visible
+    #sidebar-collapse
+      visibility: hidden
+
+
+
 @media (min-width: $cutoff-md)
-  .nav-container
+  .sidebar-container
     max-width: 8.333333%
     min-width: $offset
     .navbar-toggler
-      height: 0
-      width: 0
       visibility: hidden
+    #sidebar-collapse
+      visibility: visible
   #content-main
     max-width: 91.666667%
     margin-left: $offset
@@ -52,7 +60,35 @@ ul
     max-width: 83.333333%
     margin: 0 auto
 
-// side navbar
+// side navbar (corrected)
+.sidebar-container
+  .sidebar
+    .sidebar-header > img
+      min-width: 100%
+      max-width: 100%
+      max-height: 40px
+    .sidebar-collapsible
+      background-color: $background-sidebar
+      ul
+        background-color: inherit
+        a
+          text-decoration: none
+          display: block
+          width: 100%
+          height: 100%
+          &:visited
+            color: unset
+          &:hover
+            color: $text-highlight
+            background-color: $sidebar-highlight
+        > li
+          text-decoration: none
+          list-style-type: none
+          display: block
+
+
+// side navbar (old)
+// todo: replace this with the above
 .navbar .navbar-vertical
   position: fixed
   float: left
@@ -81,7 +117,7 @@ ul
   &:before, &:after
     content: ""
     display: table
-  :after
+  &:after
     clear: both
 
 // main body of content

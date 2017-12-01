@@ -5,6 +5,4 @@ title: "Hire me!"
 
 Like my work? Feel like giving me money? Hire me!
 
-If that wasn't enough, here's a picture of my cat.
-<!--insert cat picture here-->
 I look forward to hearing from you.

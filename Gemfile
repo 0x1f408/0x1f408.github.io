@@ -20,7 +20,7 @@ group :jekyll_plugins do
 end
 
 group :development do
-  gem "jekyll-livereload"  # enable livereload in development
+
 end
 
 # Windows-specific:
@@ -30,5 +30,10 @@ if Gem.win_platform?
 
   # Avoid polling for changes (Windows)
   gem 'wdm', '>= 0.1.0'
+
+  group :development do
+    # enable livereload in development
+    gem "jekyll-livereload"
+  end
 end
 
