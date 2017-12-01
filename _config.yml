@@ -22,7 +22,7 @@ title: '0x1f408 Design'
 # email:
 description: >
   Home page and project listing for 0x1f408, an Atlanta-based designer & web developer.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 # @todo: enable SSL/https for github-pages
 url: "http://0x1f408.me" # the base hostname & protocol for your site, e.g. http://example.com
 
