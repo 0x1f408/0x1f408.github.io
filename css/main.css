@@ -6,6 +6,10 @@ body {
   min-width: 100%;
   min-height: 100%; }
 
+span.sr-only {
+  visibility: hidden;
+  display: none; }
+
 code {
   display: inline-block;
   color: #fff;
@@ -20,6 +24,10 @@ ul, ol, li {
   display: block; }
   ul > ul, ul ol, ol > ul, ol ol, li > ul, li ol {
     padding-left: 0.667em; }
+
+img.icon-sm {
+  height: 20px;
+  width: auto; }
 
 @media (max-width: 992px) {
   .site-header .site-title-wrapper {

@@ -7,17 +7,10 @@ link: #
 <!-- @todo: we want to load in a preview image, then super-impose our text over it -->
 <span class="sr-only">Link to {{ page.link }}</span>
 <a href="{{ page.link }}" target="_blank">
-{% if page.preview %}
-    <img class="preview project-preview" src="{{ page.preview }}"/>
-{% endif %}
-    <h2 class="preview project-preview-text">{{ page.name }}</h2>
+    {% if page.preview %}
+        <img class="preview project-preview" src="{{ page.preview }}"/>
+    {% endif %}
+    <h2 class="preview project-preview-text">{{ page.title }}</h2>
 </a>
 
-<!-- under this, we want to generate a listing of our other projects -->
-<nav class="navbar-nav">
-
-</nav>
-{{ page.name }}
-{{ page.preview }}
-{{ page.alias }}
-{{ content }}
+{{content}}

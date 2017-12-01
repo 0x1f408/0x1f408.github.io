@@ -14,12 +14,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: '0x1f408 Design'
+subtitle:
 #logo:
 #header:
 #logo_title:
 #logo_tab:
-# Leave email unavailable for now
-# email:
+email: '0x1f408 at protonmail dot com'
 description: >
   Home page and project listing for 0x1f408, an Atlanta-based designer & web developer.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -74,7 +74,7 @@ defaults:
       author: "0x1f408"
   -
     scope:
-      path: "project"
+      path: "projects"
       type: "pages"
     values:
       layout: "project"

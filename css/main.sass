@@ -35,6 +35,11 @@ body
   min-width: 100%
   min-height: 100%
 
+// hide text from everything but screen readers
+span.sr-only
+  visibility: hidden
+  display: none
+
 code
   display: inline-block
   color: $text-highlight
@@ -50,6 +55,11 @@ ul, ol, li
   display: block
   > ul, ol
     padding-left: 0.667em
+
+// resize icons to 24x24
+img.icon-sm
+  height: 20px
+  width: auto
 
 // Window width < $cutoff-md
 @media (max-width: $cutoff-md)
