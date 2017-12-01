@@ -13,16 +13,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: 0x1f408 Design
+title: '0x1f408 Design'
 #logo:
 #header:
 #logo_title:
 #logo_tab:
 # Leave email unavailable for now
-# email: your-email@example.com
-description: > # this means to ignore newlines until "baseurl:"
+# email:
+description: >
   Home page and project listing for 0x1f408, an Atlanta-based designer & web developer.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 # @todo: enable SSL/https for github-pages
 url: "http://0x1f408.me" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -59,7 +59,10 @@ exclude:
 collections:
   projects:
     output: true
-    permalink: /projects/:name/
+    permalink: /project/:name/
+  keys:
+    output: true
+    permalink: /keys/:name/
 
 defaults:
   -
@@ -72,8 +75,14 @@ defaults:
       title: :name
   -
     scope:
-      path: "projects"
+      path: "project"
       type: "pages"
     values:
       layout: "project"
       title: :name
+  -
+    scope:
+      path: "keys"
+      type: "pages"
+    values:
+      layout: "default"
