@@ -1,1 +1,89 @@
-/* placeholder for now */
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 1px;
+  background-color: #464646;
+  min-width: 100%;
+  min-height: 100%; }
+
+code {
+  display: inline-block;
+  color: #fff;
+  background-color: #000000; }
+
+a {
+  text-decoration: none; }
+
+ul, ol, li {
+  list-style: none !important;
+  padding-left: 0;
+  display: block; }
+  ul > ul, ul ol, ol > ul, ol ol, li > ul, li ol {
+    padding-left: 0.667em; }
+
+@media (max-width: 992px) {
+  .site-header .site-title-wrapper {
+    min-height: 2.5em; }
+
+  .sidebar-container .navbar-toggler {
+    visibility: visible; }
+  .sidebar-container #sidebar-collapse {
+    visibility: hidden; }
+
+  #content-main {
+    padding-left: 0; } }
+@media (min-width: 992px) {
+  .sidebar-container {
+    max-width: 8.333333%;
+    min-width: 8em; }
+    .sidebar-container .navbar-toggler {
+      visibility: hidden; }
+    .sidebar-container #sidebar-collapse {
+      visibility: visible; } }
+@media (min-width: 1200px) {
+  #content-main {
+    max-width: 83.333333%;
+    margin: 0 auto; } }
+.site-header .site-title-wrapper {
+  min-height: 5em; }
+
+.sidebar-container {
+  position: relative; }
+  .sidebar-container .sidebar {
+    position: absolute;
+    max-width: 8em;
+    float: left;
+    z-index: 3;
+    transition: all 0.5s ease; }
+    .sidebar-container .sidebar .sidebar-header > img {
+      min-width: 100%;
+      max-width: 100%;
+      max-height: 40px; }
+    .sidebar-container .sidebar .sidebar-collapsible ul {
+      background-color: inherit;
+      display: block; }
+      .sidebar-container .sidebar .sidebar-collapsible ul a {
+        clear: left; }
+        .sidebar-container .sidebar .sidebar-collapsible ul a:visited {
+          color: unset; }
+        .sidebar-container .sidebar .sidebar-collapsible ul a:hover {
+          color: #fff;
+          background-color: #000000; }
+    .sidebar-container .sidebar #sidebar-copyright {
+      font-size: 70%; }
+      .sidebar-container .sidebar #sidebar-copyright p {
+        border-spacing: 0;
+        padding: 0; }
+
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+#content-main {
+  position: relative;
+  margin-left: 8em;
+  max-width: 91.666667%; }
