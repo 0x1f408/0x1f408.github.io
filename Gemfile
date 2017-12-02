@@ -14,6 +14,9 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 # gem 'jekyll', '3.5.2'
 
+# Dependency for markdown handling
+gem 'commonmarker', "0.17.6"
+
 # If you have any plugins, put them here!
 group :jekyll_plugins do
 
