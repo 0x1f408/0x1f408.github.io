@@ -13,14 +13,15 @@ $cutoff-lg: 1200px //less than: 992-1199
 
 // color definitions
 // todo: still need to work on these
-$background: #464646 // later: dark grey
-$text: #000000 // later: off-white?
+$background: #000
+$foreground: #222426
+$text: #e1e8ed
 $text-accent: orange // later: better orange-ish color?
-$text-highlight: #fff
-$anchor: blue // later: lighter blue (cyan-ish)
-$sidebar-highlight: #000000 // later: light grey
-$borders-dark: #ffffff
-$borders-light: #000000
+$text-highlight: #111
+$anchor: #8fcaec // later: lighter blue (cyan-ish)
+$foreground-hover: #e1e8ed
+$borders-dark: #222426
+$borders-light: #e1e8ed
 
 // Default amount to offset components in the x- and y-axes
 $offset-x: 8em
@@ -43,7 +44,7 @@ span.sr-only
 code
   display: inline-block
   color: $text-highlight
-  background-color: $sidebar-highlight
+  background-color: $foreground-hover
 
 a
   text-decoration: none
@@ -117,7 +118,7 @@ img.icon-sm
             color: unset
           &:hover
             color: $text-highlight
-            background-color: $sidebar-highlight
+            background-color: $foreground-hover
     #sidebar-copyright
       font-size : 70%
       p

@@ -39,4 +39,3 @@ if Gem.win_platform?
     gem "jekyll-livereload"
   end
 end
-

@@ -22,6 +22,12 @@ It will eventually be released in full on [rubygems](rubygems.org) as a Jekyll t
 
 * create a few color themes
 
+* add a `Designs` (or `Gallery`) section with:
+
+  * descriptions of work done (who/what/where/when)
+  
+  * actual designs created
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub [here](https://github.com/0x1f408/0x1f08.github.io). This project is a safe, welcoming, & inclusive space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
