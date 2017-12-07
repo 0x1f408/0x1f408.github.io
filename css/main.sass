@@ -20,12 +20,14 @@ $text-accent: orange // later: better orange-ish color?
 $text-highlight: #111
 $anchor: #8fcaec // later: lighter blue (cyan-ish)
 $foreground-hover: #e1e8ed
-$borders-dark: #222426
-$borders-light: #e1e8ed
+$borders-dark: #222426 // we may not need this
+
+// redefine border color:
+$border: rgba(225,232,237,0.2)
 
 // Default amount to offset components in the x- and y-axes
-$offset-x: 8em
-$offset-y: 5em
+$offset-x: 9em
+$offset-y: 4em
 
 // hard "nope" on horizontal scrollbars
 body
@@ -33,6 +35,7 @@ body
   margin: 0
   padding: 1px
   background-color: $background
+  color: $text
   min-width: 100%
   min-height: 100%
 
@@ -48,6 +51,7 @@ code
 
 a
   text-decoration: none
+  color: $anchor
 
 // hard "nope" on bullets
 ul, ol, li
@@ -57,10 +61,33 @@ ul, ol, li
   > ul, ol
     padding-left: 0.667em
 
-// resize icons to 24x24
+// resize icons to 20x20
 img.icon-sm
   height: 20px
   width: auto
+
+// basic borders & spacing
+// todo: move these into the appropriate sections
+.body-container
+  margin-top: 2px
+  margin-left: 2px
+
+.site-header
+  border-bottom: 1px solid $border
+.sidebar-container
+  border: 1px 1px 1px 0 solid $border
+.sidebar-copyright
+  border-top: 1px solid $border
+.content-main
+  border: 1px 0px 1px 1px solid $border
+.footer
+  border-top: 1px solid $border
+
+
+// define foreground color
+.foreground
+  background-color: $foreground
+  border: 1px solid rgba(225,232,237,0.3)
 
 // Window width < $cutoff-md
 @media (max-width: $cutoff-md)

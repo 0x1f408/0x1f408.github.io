@@ -6,15 +6,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>--><!-- todo: update the above from navbar-* to sidebar-* -->
 
-        <div class="sidebar-collapsible" id="sidebar-collapse">
+        <div class="sidebar-collapsible foreground" id="sidebar-collapse">
             <div class="sidebar-header">
                 <!-- header image for the navigation bar -->
             </div>
 
-            <!-- todo: look at .nav definitions in bootstrap.css; currently shows bullets-->
             <ul class="sidebar-nav"><!-- docs suggested .mr-auto-->
                 <!--@note: add .active and <span class="sr-only>current</span> to active element-->
                 <!-- @todo: will need to automate generating the below from /_data/:filename.yml before publishing theme -->
+                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/about/">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/contact/">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/projects/">Projects Home</a></li>
@@ -29,6 +29,7 @@
                 <p>&copy;2017 {% if site.year != 2017 %}- {{ site.year }}{% endif %} 0x1f408 Designs</p>
                 <p>Content available under the <a href="/LICENSE.txt" target="_blank">MIT License</a>.</p>
             </div>
-        </div>
+       </div>
     </nav>
+
 </div>
