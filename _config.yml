@@ -13,15 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: '0x1f408 Design'
+title: '0x1f408 Dev'
 subtitle:
-#logo:
-#header:
-#logo_title:
-#logo_tab:
-email: '0x1f408 at protonmail dot com'
+#site_header:
+#sidebar_header:
+
 description: >
-  Home page and project listing for 0x1f408, an Atlanta-based designer & web developer.
+  Home page and project listing for 0x1f408, an Atlanta-based web developer.
 baseurl: "" # the subpath of your site, e.g. /blog
 # @todo: enable SSL/https for github-pages
 url: "http://0x1f408.me" # the base hostname & protocol for your site, e.g. http://example.com

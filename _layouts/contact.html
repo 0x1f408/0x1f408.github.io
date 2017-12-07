@@ -1,17 +1,22 @@
 ---
 layout: default
 ---
-{% if site.email %}
-    <h3>Email:</h3>
-    {{ site.email }}
-{% endif %}
-
+<h3>Email:</h3>
+<ul id="email-list">
+    {% for email in site.data.contact.emails %}
+        <li>{{ email.email }}<br/>
+            {% if email.key %}
+            Public key available at <a href="/key/{{ email.key }}">{{ email.key }}</a>.
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
 <h3>Social media:</h3>
 <ul id="social-sites">
     <!-- data located in _data/sites.yml -->
-    {% for profile in site.data.sites %}
+    {% for socialsite in site.data.contact.sites %}
     <li>
-        <a href="{{ profile.link }}"><img src="{{ site.assets }}/icon/{{ profile.icon }}" alt="{{ profile.site }}" class="icon-sm"/>{{ profile.username }}
+        <a href="{{ socialsite.link }}"><img src="{{ site.assets }}/icon/{{ socialsite.icon }}" alt="{{ socialsite.site }}" class="icon-sm"/>{{ socialsite.username }}
         </a>
     </li>
     {% endfor %}

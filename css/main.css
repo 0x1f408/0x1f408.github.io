@@ -32,8 +32,7 @@ img.icon-sm {
   width: auto; }
 
 .body-container {
-  margin-top: 2px;
-  margin-left: 2px; }
+  margin-top: 2px; }
 
 .site-header {
   border-bottom: 1px solid rgba(225, 232, 237, 0.2); }
@@ -57,11 +56,6 @@ img.icon-sm {
 @media (max-width: 992px) {
   .site-header .site-title-wrapper {
     min-height: 2.5em; }
-
-  .sidebar-container .navbar-toggler {
-    visibility: visible; }
-  .sidebar-container #sidebar-collapse {
-    visibility: hidden; }
 
   #content-main {
     padding-left: 0; } }

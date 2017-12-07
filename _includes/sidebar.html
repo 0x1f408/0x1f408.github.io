@@ -1,10 +1,10 @@
-<!-- Side navigation bar template -->
+<!-- Side navigation bar -->
 <div class="sidebar-container container container-fluid clearfix">
-    <nav class="sidebar sidebar-expand-md">
+    <nav class="sidebar sidebar-expand-md foreground">
         <!--<button type="button" class="sidebar-toggler" data-target="#navbar-collapsible" aria-expanded="false">
             <span class="sr-only">Toggle navigation pane</span>
             <span class="navbar-toggler-icon"></span>
-        </button>--><!-- todo: update the above from navbar-* to sidebar-* -->
+        </button>-->
 
         <div class="sidebar-collapsible foreground" id="sidebar-collapse">
             <div class="sidebar-header">
@@ -12,7 +12,6 @@
             </div>
 
             <ul class="sidebar-nav"><!-- docs suggested .mr-auto-->
-                <!--@note: add .active and <span class="sr-only>current</span> to active element-->
                 <!-- @todo: will need to automate generating the below from /_data/:filename.yml before publishing theme -->
                 <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/about/">About</a></li>
@@ -23,6 +22,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/project/0x1f408">0x1f408.me</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/project/refurence">Refurence.me</a></li>
                 </ul>
+                <!-- todo: add in a link here for design work (e.g. the stuff done for Twitch -->
             </ul>
             <div id="sidebar-copyright">
                 <!-- this should go at the bottom of the sidebar -->
