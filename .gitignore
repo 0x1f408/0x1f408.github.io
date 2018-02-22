@@ -1,7 +1,12 @@
 _site
 .sass-cache
 .jekyll-metadata
+
+# Editor:
 .idea
+*.iml
+
 
 # Temporary:
 assets/*.gemspec
+candidates
