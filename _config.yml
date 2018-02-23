@@ -13,15 +13,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: '0x1f408 Dev'
-subtitle:
+title: '0x1f408 Development'
+subtitle: 'Lorem ipsum si dolor amet' # todo: replace this
 #site_header:
 #sidebar_header:
 
 description: >
   Home page and project listing for 0x1f408, an Atlanta-based web developer.
 baseurl: "" # the subpath of your site, e.g. /blog
-# @todo: enable SSL/https for github-pages
 url: "http://0x1f408.me" # the base hostname & protocol for your site, e.g. http://example.com
 
 # This probably isn't needed, but I wanted to add an easy way to grab year for copyright info, etc.
@@ -58,9 +57,6 @@ collections:
   projects:
     output: true
     permalink: /project/:name/
-  keys:
-    output: true
-    permalink: /key/:name/
 
 defaults:
   -
@@ -69,16 +65,9 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-      author: "0x1f408"
   -
     scope:
       path: "projects"
       type: "pages"
     values:
       layout: "project"
-  -
-    scope:
-      path: "keys"
-      type: "pages"
-    values:
-      layout: "default"

@@ -9,4 +9,5 @@ _site
 
 # Temporary:
 assets/*.gemspec
+Gemfile.lock
 candidates

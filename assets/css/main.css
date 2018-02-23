@@ -1,0 +1,32 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.container-fluid, header, footer {
+    width: 100%;
+    display: flex;
+}
+.container-fluid{
+    flex: 1 0 auto;
+}
+.container-fluid > div{
+    flex: 1;
+}
+.sidebar {
+    max-width: 15%;
+}
+.align-right{
+    text-align: end;
+}
+
+header, footer > div {
+    /*flex: none;*/
+}
+div, header, footer {
+/*    border: 1px solid black;*/
+}
