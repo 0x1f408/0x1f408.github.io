@@ -1,77 +1,4 @@
-// todo: define our font stack
-// our old copy of main.sass
-// $font-stack:
 
-
-
-
-
-// redefine border color:
-$border: rgba(225,232,237,0.2)
-
-// Default amount to offset components in the x- and y-axes
-$offset-x: 9em
-$offset-y: 4em
-
-// hard "nope" on horizontal scrollbars
-body
-  overflow-x: hidden
-  margin: 0
-  padding: 1px
-  background-color: $background
-  color: $text
-  min-width: 100%
-  min-height: 100%
-
-// hide text from everything but screen readers
-span.sr-only
-  visibility: hidden
-  display: none
-
-code
-  display: inline-block
-  color: $text-highlight
-  background-color: $foreground-hover
-
-a
-  text-decoration: none
-  color: $anchor
-
-// hard "nope" on bullets
-ul, ol, li
-  list-style: none !important
-  padding-left: 0
-  display: block
-  > ul, ol
-    padding-left: 0.667em
-
-// resize icons to 20x20
-img.icon-sm
-  height: 20px
-  width: auto
-
-// basic borders & spacing
-// todo: move these into the appropriate sections
-.body-container
-  margin-top: 2px
-.site-header
-  border-bottom: 1px solid $border
-.sidebar-container
-  border: 1px 1px 1px 0 solid $border
-.sidebar-copyright
-  border-top: 1px solid $border
-.content-main
-  border: 1px 0px 1px 1px solid $border
-.footer
-  border-top: 1px solid $border
-
-
-// define foreground color
-.foreground
-  background-color: $foreground
-  border: 1px solid rgba(225,232,237,0.3)
-
-// Window width < $cutoff-md
 @media (max-width: $cutoff-md)
   .site-header
     .site-title-wrapper
@@ -84,7 +11,7 @@ img.icon-sm
   #content-main
     padding-left: 0
 
-// Window width >= $cutoff-md
+
 @media (min-width: $cutoff-md)
   .sidebar-container
     max-width: 8.333333%
@@ -103,45 +30,6 @@ img.icon-sm
 .site-header
   .site-title-wrapper
     min-height: $offset-y
-
-// side navbar (corrected)
-.sidebar-container
-  position: relative
-  .sidebar
-    position: absolute
-    max-width: $offset-x
-    float: left
-    z-index: 3
-    transition: all 0.5s ease
-    .sidebar-header > img
-      min-width: 100%
-      max-width: 100%
-      max-height: 40px
-    .sidebar-collapsible
-      ul
-        background-color: inherit
-        display: block
-        a
-          clear: left
-          &:visited
-            color: unset
-          &:hover
-            color: $text-highlight
-            background-color: $foreground-hover
-    #sidebar-copyright
-      font-size : 70%
-      p
-        border-spacing: 0
-        padding: 0
-
-// clearfix hack
-.clearfix
-  zoom: 1
-  &:before, &:after
-    content: ""
-    display: table
-  &:after
-    clear: both
 
 // main body of content
 #content-main

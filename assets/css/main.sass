@@ -2,10 +2,12 @@
 // todo: this was working on our testpage, but the footer currently sticks
 //       about halfway up the page; do we have additional container-fluid's stashed somewhere?
 // todo: finish transferring stuff to this file from main-old.sass
+// todo: fix the formatting of this page
 
 ////////////////////
 // 1.1 Variables  //
 ////////////////////
+// todo: define these
 // $font-stack:
 // $code-font-stack:
 
@@ -17,6 +19,7 @@ $cutoff-lg: 1200px //less than: 992-1199
 //anything >=1200px is XL
 
 // Color definitions
+// todo: switch to a lighter theme, possibly provide these as options?
 // twitter: #222426 #e1e8ed #111 #8fcaec
 // discord: #202225 #2f3136 #36393e #41454e #ffffff
 $background: #000
@@ -27,3 +30,150 @@ $text-highlight: #111
 $anchor: #8fcaec
 $foreground-hover: #e1e8ed
 $border: rgba(225,232,237,0.2)
+
+////////////////////
+// 2.1 Globals    //
+////////////////////
+// Zero everything out
+html, body, div, p, img, code, em, strong, u, h1, h2, h3, h4, h5, a, ul, ol, li, header, footer, span, small, strike, sub, sup, dl, dt, dd, tr, td, th, caption, label, legend, form
+  font-family: inherit
+  font-size: 100%
+  font-style: inherit
+  font-weight: inherit
+  margin: 0
+  padding: 0
+  border: 0
+
+html, body
+  height: 100%
+
+body
+  overflow-x: hidden
+  overflow-y: auto //todo: define custom scrollbar
+  background-color: $background
+  color: $text
+  display: flex
+  flex-direction: column
+
+// Links
+a
+  text-decoration: none
+  color: $anchor
+  &:hover
+
+  &:visited
+
+  &:active
+
+// Lists
+ul, ol, li
+  list-style: none
+  display: block // do we need this?
+  > ul, ol // Sub-lists
+    padding-left: 0.667em
+
+// 'Code' blocks
+code
+  display: inline-block
+  color: $text-highlight
+  background-color: $foreground-hover
+
+// Hide sections from everything but screen readers
+.sr-only
+  width: 0
+  height: 0
+  position: absolute
+  overflow: hidden
+  border: 0
+  padding: 0
+
+////////////////////
+// 3.2 Rough Layout//
+////////////////////
+// Foreground
+.foreground
+  background-color: $foreground
+  z-index: 1
+
+// Flex containers
+.container-fluid
+  flex: 1 0 auto
+  &, header, footer
+    width: 100%
+    display: flex
+  > div
+    flex: 1
+
+// Force right alignment
+.align-right
+  text-align: end
+
+// Icons
+img.icon-sm
+  height: 20px
+  width: auto
+
+////////////////////
+// 3.3 Borders    //
+////////////////////
+.site-header
+  border-bottom: 1px solid $border
+.sidebar-container
+  border: 1px solid $border
+.sidebar-copyright
+  border-top: 1px solid $border
+.content-main
+  border: 1px 0px 1px solid $border
+.footer
+  border-top: 1px solid $border
+
+////////////////////
+// 4.0 Detail     //
+////////////////////
+// 4.1 Header
+
+// 4.2 Footer
+
+// 4.3 Sidebar
+.sidebar
+  max-width: 15%
+  ul
+    display: block
+    background-color: inherit
+  a
+    /*clear: left */
+    &:hover
+      color: $text-highlight
+      background-color: $foreground-hover
+    &:visited
+      color: unset
+  #sidebar-copyright
+    font-size: 70%
+    p
+      border-spacing: 0
+      padding: 0
+
+// 4.3 Main Content
+
+////////////////////
+// 5.1 @media     //
+////////////////////
+// 5.1 Window width < $cutoff-sm
+@media (max-width: $cutoff-sm)
+  .site-header
+    .site-title-wrapper
+      min-height: 2em
+  #content-main
+    padding-left: 0
+
+// 5.2 Window width <= $cutoff-md
+@media (max-width: $cutoff-md)
+
+// 5.3 Window width <= $cutoff-lg
+@media (max-width: $cutoff-lg)
+  .site-header
+    .site-title-wrapper
+      min-height: 4em
+
+// 5.4 Window width > $cutoff-lg
+@media (min-width: $cutoff-lg)
