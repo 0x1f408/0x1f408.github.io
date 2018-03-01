@@ -51,12 +51,18 @@ exclude:
   - .gitignore
   - Gemfile
   - Gemfile.lock
+  - .iml
+  - .sass_cache/
+  - candidiates/
 
 # List our projects:
 collections:
   projects:
     output: true
     permalink: /project/:name/
+  pages:
+    output: true
+    permalink: /:path/
 
 defaults:
   -

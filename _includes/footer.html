@@ -1,7 +1,16 @@
 <footer>
     <div class="container-fluid">
-        <div class="align-left">footer text</div>
+        <div class="align-left transparency-md">
+            footer text
+        </div>
 
-        <div class="align-right">social</div>
+        <div class="align-right transparency-md"> <!-- social media links -->
+            {% for entry in site.data.socialsites %}
+                <a href="{{ entry.link }}" title="Follow me on {{ entry.name }}" target="_blank">
+                    <img class="icon-sm" src="../../assets/img/icons/{{ entry.icon }}"/>
+                </a>
+            {% endfor %}
+        </div>
+
     </div>
 </footer>

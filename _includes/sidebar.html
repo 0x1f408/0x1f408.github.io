@@ -7,28 +7,88 @@
         </button>-->
 
         <div class="sidebar-collapsible" id="sidebar-collapse">
+            <!-- Sidebar Header -->
             <div id="sidebar-header">
                 <!--header image, text-->
-
             </div>
 
+            <!-- Main links -->
             <ul class="sidebar-nav">
-                <!-- @todo: will need to automate generating the below from /_data/:filename.yml before publishing theme -->
                 <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/about/">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/contact/">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/projects/">Projects Home</a></li>
-                <ul class="sidebar-nav subnav" id="projects-subnav">
-                    <!-- @todo: will need to automate generating the below from /_data/:filename.yml before publishing theme -->
-                    <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/project/0x1f408">0x1f408.me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/project/refurence">Refurence</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/project/openmarket">OpenMarket</a></li>
-                </ul>
-                <!-- todo: add in a link here for design work (e.g. the stuff done for Twitch -->
+                {% for page in site.pages %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ page.permalink }}">
+                            {{ page.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+
+                {% comment %}
+                Iterate through each of our collections, excluding 'pages' and 'posts'.
+
+                Provide the label collection, a link to its index (if it exists),
+                and a sub-list of the docs in that collection, with links to the
+                appropriate pages.
+
+                {% endcomment %}
+                <!-- todo: add dividing line to ul.sidebar-nav::after -->
+                {% assign i = 0 %}
+                {% for collection in site.collections %}
+                    <!-- todo: exclude 'pages' and 'posts' -->
+                    {% unless collection.label contains 'pages' %}
+                        {% unless collection.label contains 'posts' %}
+                            <!-- todo: if collection has an index page defined, link to it here-->
+                            <li>{{collection.label}}</li>
+                            <ul class="sidebar-nav subnav">
+                                {% for doc in collection.docs %}
+                                    {% unless doc.path contains 'index' %}
+                                    <!-- todo: provide permalink here -->
+                                    <li>{{doc.title}}</li>
+                                    {% endunless %}
+                                {% endfor %}
+                            </ul>
+                        {% endunless %}
+                    {% endunless %}
+                    {% assign i = i | plus: 1 %}
+                {% endfor %}
+
+
             </ul>
 
+            <!--
+            <ul class="sidebar-nav">
+                {% for col in site.collections %}
+                    <li>
+                        {% if !section.permalink.nil? %}
+                            <!-- provide link to section + section name-- >
+                            nil {{col.label}}
+                        {% else %}
+                            <!-- provide section name-- >
+                            {{col.label}}
+                        {% endif %}
+                        <ul class="sidebar-nav subnav">
+                            {% for page in site.projects %}
+                                {%comment%}
+                                the below is kind of a hack-y fix, since Jekyll isn't recognizing page.basename
+                                {%endcomment%}
+                                {% if page.layout != 'default' %}
+                                    <li class="nav-item">
+                                        <a href="{{ page.url }}" class="nav-link">
+                                            {{ page.title }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>-->
+
+                <!-- todo: add in a link here for design work (e.g. the stuff done for Twitch -->
+                <a class="nav-link" href="https://github.com/0x1f408/0x1f408.github.io/issues" target="_blank">Report Issues</a>
+
+
             <div id="sidebar-copyright">
-                <!-- this should go at the bottom of the sidebar -->
                 <p>&copy;2017 {% if site.year != 2017 %}- {{ site.year }}{% endif %} 0x1f408 Designs</p>
                 <p>Content available under the <a href="/LICENSE.txt" target="_blank">MIT License</a>.</p>
             </div>

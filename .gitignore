@@ -6,8 +6,9 @@ _site
 .idea
 *.iml
 
+# Ruby
+Gemfile.lock
+
 
 # Temporary:
-assets/*.gemspec
-Gemfile.lock
 candidates
