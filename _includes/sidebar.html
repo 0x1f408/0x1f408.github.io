@@ -31,7 +31,8 @@
                 appropriate pages.
 
                 {% endcomment %}
-                <!-- todo: add dividing line to ul.sidebar-nav::after -->
+                <!-- todo: add dividing line to ul.sidebar-nav::after
+                    may add that as a separate class -->
                 {% assign i = 0 %}
                 {% for collection in site.collections %}
                     <!-- todo: exclude 'pages' and 'posts' -->
@@ -52,45 +53,14 @@
                     {% assign i = i | plus: 1 %}
                 {% endfor %}
 
-
             </ul>
 
-            <!--
-            <ul class="sidebar-nav">
-                {% for col in site.collections %}
-                    <li>
-                        {% if !section.permalink.nil? %}
-                            <!-- provide link to section + section name-- >
-                            nil {{col.label}}
-                        {% else %}
-                            <!-- provide section name-- >
-                            {{col.label}}
-                        {% endif %}
-                        <ul class="sidebar-nav subnav">
-                            {% for page in site.projects %}
-                                {%comment%}
-                                the below is kind of a hack-y fix, since Jekyll isn't recognizing page.basename
-                                {%endcomment%}
-                                {% if page.layout != 'default' %}
-                                    <li class="nav-item">
-                                        <a href="{{ page.url }}" class="nav-link">
-                                            {{ page.title }}
-                                        </a>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </li>
-                {% endfor %}
-            </ul>-->
-
-                <!-- todo: add in a link here for design work (e.g. the stuff done for Twitch -->
-                <a class="nav-link" href="https://github.com/0x1f408/0x1f408.github.io/issues" target="_blank">Report Issues</a>
-
-
             <div id="sidebar-copyright">
-                <p>&copy;2017 {% if site.year != 2017 %}- {{ site.year }}{% endif %} 0x1f408 Designs</p>
-                <p>Content available under the <a href="/LICENSE.txt" target="_blank">MIT License</a>.</p>
+                <!-- todo: define more of this in _config,yml -->
+                &copy; {{ site.startyear }}
+                {% if site.date %}-{{ today | date: "%Y" }} {% endif %}
+                {{ site.author }}<br/>
+                Content available under the <a href="/LICENSE.txt" target="_blank">MIT License</a>.
             </div>
         </div>
     </nav>

@@ -1,0 +1,44 @@
+---
+layout: default
+permalink: /demo/
+---
+<!--TODO: Make sure this is excluded from git-->
+<!--Input Demo-->
+<form method="get" name="form">
+    <label for="name">Name: </label><input type="text" id="name" placeholder="Example User"/><br/>
+    <label for="email">Email: </label><input type="text" id="email" placeholder="example@example.com"/>
+    <br/>
+    <input type="radio" name="gender" value="M">Male
+    <input type="radio" name="gender" value="F">Female
+    <input type="radio" name="gender" value="N">Other
+    <br/>
+    <input type="reset"><input type="submit" value="Send" onclick="showResult();" />
+    <br/>
+    <p>
+        Output: <output name="result"></output>
+    </p>
+</form>
+
+<script type="text/javascript">
+    function showResult(){
+        x = document.forms["form"]["email"].value;
+        document.forms["form"]["result"].value=x;
+    }
+</script>
+
+<!--SVG demo-->
+<style>
+    #svgdemo{
+        position: relative;
+        height: 200px;
+        left: 50%;
+        -webkit-transform: translateX(-20%);
+        -moz-transform: translateX(-20%);
+        -ms-transform: translateX(-20%);
+        -o-transform: translateX(-20%);
+        transform: translateX(-20%);
+    }
+</style>
+<svg id="svgdemo">
+    <circle cx="50" cy="50" r="50" fill="#121516" />
+</svg>

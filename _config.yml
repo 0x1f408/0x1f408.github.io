@@ -14,17 +14,27 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: '0x1f408 Development'
-subtitle: 'Lorem ipsum si dolor amet' # todo: replace this
-#site_header:
+subtitle: 'Creating a better web.'
+
+# todo: make below images default to $assets/img/header_background.* and $assets/img/sidebar_background.*
+# there does not appear to be a convenient way to source these in main.sass (SASS error)
+#background: "/assets/img/index.png"
+#header:
 #sidebar_header:
 
 description: >
   Home page and project listing for 0x1f408, an Atlanta-based web developer.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://0x1f408.me" # the base hostname & protocol for your site, e.g. http://example.com
+# the base hostname & protocol for your site, e.g. http://example.com
+url: "http://0x1f408.me"
 
-# This probably isn't needed, but I wanted to add an easy way to grab year for copyright info, etc.
-year: 2017
+# the subpath of your site, e.g. /blog
+baseurl: ""
+
+# Define the year we first put the site up
+startyear: 2017
+
+# Define the site author
+author: 0x1f408
 
 # Do we also want to add something to define when the site was last updated?
 # We could probably define the above (`year`) with the same

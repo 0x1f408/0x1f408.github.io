@@ -1,13 +1,10 @@
 // todo: define our font stack
-// todo: this was working on our testpage, but the footer currently sticks
-//       about halfway up the page; do we have additional container-fluid's stashed somewhere?
 // todo: finish transferring stuff to this file from main-old.sass
-// todo: fix the formatting of this page
+// todo: reorganize this to be mobile-first
 
 ////////////////////
 // 1.1 Variables  //
 ////////////////////
-// todo: define these
 // $font-stack:
 // $code-font-stack:
 
@@ -18,12 +15,15 @@ $cutoff-md: 992px //less than: 760-991
 $cutoff-lg: 1200px //less than: 992-1199
 //anything >=1200px is XL
 
+// Background definitions
+$main-bg: url('/assets/img/bg/index.png')
+
 // Color definitions
 // todo: switch to a lighter theme, possibly provide these as options?
 // twitter: #222426 #e1e8ed #111 #8fcaec
 // discord: #202225 #2f3136 #36393e #41454e #ffffff
 $background: #000
-$foreground: #222426
+$foreground: rgba(34,36,38,0.3) //#222426
 $text: #e1e8ed
 $text-accent: orange // later: better orange-ish color?
 $text-highlight: #111
@@ -50,7 +50,11 @@ html, body
 body
   overflow-x: hidden
   overflow-y: auto //todo: define custom scrollbar
-  background-color: $background
+  // todo: compress the below to a single line
+  background: $background
+  background-image: url("/assets/img/bg/index.png")
+  background-size: cover
+  background-repeat: no-repeat
   color: $text
   display: flex
   flex-direction: column
@@ -91,9 +95,10 @@ code
 // 3.2 Rough Layout//
 ////////////////////
 // Foreground
-.foreground
-  background-color: $foreground
-  z-index: 1
+// todo: this doesn't appear to do anything...?
+//.foreground
+//  background-color: $foreground
+//  z-index: 1
 
 // Flex containers
 .container-fluid
@@ -131,8 +136,32 @@ img.icon-sm
 // 4.0 Detail     //
 ////////////////////
 // 4.1 Header
+header
+  border-bottom: 1px solid cyan
+  border-radius: 8px
+  min-height: 3.75em
+  text-align: center
+  letter-spacing: 0.125em
+  background-color: $foreground
+  a
+    text-decoration: none
+    color: $text
+  .title-container
+    /* todo: define left padding elsewhere (needs to be consistent with sidebar, et al*/
+    //padding-left: 0.25em
+    h1
+      font-size: 1.675em
+    h2
+      display: block
+      font-size: 0.875em
+      color: $text-accent
+      font-style: oblique
+
 
 // 4.2 Footer
+footer
+  div
+    display: block
 
 // 4.3 Sidebar
 .sidebar

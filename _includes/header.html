@@ -2,10 +2,13 @@
     <div class="container-fluid">
         <div class="site-title">
             <a href="/" title="return to home page">
-                <h1>{{ site.title }}</h1>
-                {% if site.subtitle %}
-                    <h2>{{site.subtitle}}</h2>
-                {% endif %}
+                <div class="title-container">
+                    <h1>{{ site.title }}</h1>
+                    {% if site.subtitle %}
+                        <h2>{{site.subtitle}}</h2>
+                    {% endif %}
+                </div>
+
             </a>
         </div>
         <!-- if we want to add another section here later (e.g.: search, profile icon, etc),

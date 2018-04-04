@@ -13,7 +13,10 @@ html, body {
 body {
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #000;
+  background: #000;
+  background-image: url("/assets/img/bg/index.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #e1e8ed;
   display: flex;
   flex-direction: column; }
@@ -40,10 +43,6 @@ code {
   overflow: hidden;
   border: 0;
   padding: 0; }
-
-.foreground {
-  background-color: #222426;
-  z-index: 1; }
 
 .container-fluid {
   flex: 1 0 auto; }
@@ -74,6 +73,29 @@ img.icon-sm {
 
 .footer {
   border-top: 1px solid rgba(225, 232, 237, 0.2); }
+
+header {
+  border-bottom: 1px solid cyan;
+  border-radius: 8px;
+  min-height: 3.75em;
+  text-align: center;
+  letter-spacing: 0.125em;
+  background-color: rgba(34, 36, 38, 0.3); }
+  header a {
+    text-decoration: none;
+    color: #e1e8ed; }
+  header .title-container {
+    /* todo: define left padding elsewhere (needs to be consistent with sidebar, et al */ }
+    header .title-container h1 {
+      font-size: 1.675em; }
+    header .title-container h2 {
+      display: block;
+      font-size: 0.875em;
+      color: orange;
+      font-style: oblique; }
+
+footer div {
+  display: block; }
 
 .sidebar {
   max-width: 15%; }
