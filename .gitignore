@@ -8,3 +8,7 @@ _site
 
 # Ruby
 Gemfile.lock
+
+# Temporary files
+tmp/*
+!/tmp/.gitkeep

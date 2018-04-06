@@ -1,0 +1,37 @@
+---
+layout: post
+permalink: /demo/dom/
+title: DOM Demo
+subtitle: Introduction to Document Object Model
+---
+<div id="example-1"></div>
+<div id="example-2">
+    <h2>Text color</h2>
+
+    <form id="form-1">
+        <select form="form-1" onChange="setBodyAttr('text',this.options[this.selectedIndex].value);" name="text">
+            <option value="white">White</option>
+            <option value="blue">Blue</option>
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="green" selected>Green</option>
+
+        </select>
+    </form>
+</div>
+
+<script>
+    window.onload = function() {
+        let parent = document.getElementById("parent");
+        let heading = document.createElement("article");
+        let heading_text = document.createTextNode("{{ page.subtitle }}\nExample #1");
+        heading.appendChild(heading_text);
+        parent.appendChild(heading);
+        document.getElementById("page-content-wrapper").appendChild(parent);
+
+    };
+    let setBodyAttr = (attr, value) => {
+        if (document.body) { eval('document.body.'+attr+'="'+value+'"'); }
+        else notSupported();
+    };
+</script>

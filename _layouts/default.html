@@ -10,13 +10,13 @@ This is the basis for the 'project' layout.
     {% include head.html %}
     <body>
         {% include header.html %}
-        <div class="container-fluid">
+        <main id="wrapper">
             {% include sidebar.html %}
-            <div id="content-main">
+            <div id="page-content-wrapper" class="container-fluid">
                 {{ content }}
             </div>
 
-        </div>
+        </main>
         {% include footer.html %}
     </body>
 </html>

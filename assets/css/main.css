@@ -56,27 +56,12 @@ code {
   text-align: end; }
 
 img.icon-sm {
-  height: 20px;
+  height: 24px;
   width: auto; }
-
-.site-header {
-  border-bottom: 1px solid rgba(225, 232, 237, 0.2); }
-
-.sidebar-container {
-  border: 1px solid rgba(225, 232, 237, 0.2); }
-
-.sidebar-copyright {
-  border-top: 1px solid rgba(225, 232, 237, 0.2); }
-
-.content-main {
-  border: 1px 0px 1px solid rgba(225, 232, 237, 0.2); }
-
-.footer {
-  border-top: 1px solid rgba(225, 232, 237, 0.2); }
 
 header {
   border-bottom: 1px solid cyan;
-  border-radius: 8px;
+  border-radius: 0 0 8px 8px;
   min-height: 3.75em;
   text-align: center;
   letter-spacing: 0.125em;
@@ -94,8 +79,10 @@ header {
       color: orange;
       font-style: oblique; }
 
-footer div {
-  display: block; }
+footer {
+  background-color: rgba(34, 36, 38, 0.3); }
+  footer div {
+    display: inline-block; }
 
 .sidebar {
   max-width: 15%; }

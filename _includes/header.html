@@ -1,22 +1,28 @@
-<header role="banner">
+<header role="banner" id="page-header">
     <div class="container-fluid">
-        <div class="site-title">
+        <a href="#menu-toggle" role="button" class="btn btn-outline-dark" id="menu-toggle">
+            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+        </a>
             <a href="/" title="return to home page">
-                <div class="title-container">
-                    <h1>{{ site.title }}</h1>
-                    {% if site.subtitle %}
-                        <h2>{{site.subtitle}}</h2>
-                    {% endif %}
-                </div>
 
+                <h1>{{ site.title }}</h1>
+                {% if site.subtitle %}
+                    <h2>{{site.subtitle}}</h2>
+                {% endif %}
             </a>
-        </div>
-        <!-- if we want to add another section here later (e.g.: search, profile icon, etc),
-        that can be added here-->
     </div>
+
 </header>
 
-<!--
-{% assign default_paths = site.pages | map: "path" %}
-        {% assign page_paths = site.header_pages | default: default_paths %}
--->
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+<style>
+    #menu-toggle{
+        vertical-align: middle;
+    }
+</style>

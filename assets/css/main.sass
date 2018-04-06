@@ -121,15 +121,15 @@ img.icon-sm
 ////////////////////
 // 3.3 Borders    //
 ////////////////////
-.site-header
+//.site-header
   border-bottom: 1px solid $border
-.sidebar-container
+//.sidebar-container
   border: 1px solid $border
-.sidebar-copyright
+//.sidebar-copyright
   border-top: 1px solid $border
-.content-main
+//.content-main
   border: 1px 0px 1px solid $border
-.footer
+//.footer
   border-top: 1px solid $border
 
 ////////////////////
@@ -138,7 +138,7 @@ img.icon-sm
 // 4.1 Header
 header
   border-bottom: 1px solid cyan
-  border-radius: 8px
+  border-radius: 0 0 8px 8px
   min-height: 3.75em
   text-align: center
   letter-spacing: 0.125em
@@ -160,8 +160,9 @@ header
 
 // 4.2 Footer
 footer
+  background-color: $foreground
   div
-    display: block
+    display: inline-block
 
 // 4.3 Sidebar
 .sidebar

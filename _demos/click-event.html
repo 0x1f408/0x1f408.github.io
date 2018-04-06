@@ -1,0 +1,22 @@
+---
+layout: post
+permalink: /demo/clickevent/
+title: Click Event Demo
+subtitle: Introduction to Click Events
+---
+<div>
+    <p>A click shows both <code>event.target</code> and <code>this</code> to compare:</p>
+    <form id="form">
+        Press me
+    </form>
+</div>
+
+<script>
+    form.onclick = function (event) {
+        event.target.style.backgroundColor = 'red';
+        setTimeout(() => {
+           alert("target: " + event.target.tagName + ", this: " + this.tagName);
+           event.target.style.backgroundColor = '';
+        }, 0);
+    };
+</script>

@@ -1,0 +1,49 @@
+---
+layout: post
+permalink: /demo/js/
+title: JavaScript Demo
+subtitle: Changing HTML elements & style using JavaScript
+---
+<script>
+    // Note : I'm using ES6 syntax here (not 5.1)
+    /*
+    * ES6: let functionName = (parameters) => { function content };
+    * ES5: function functionName(parameters){ function content}
+    * */
+    let id = "demo";
+    let content = "... or is it?\n";
+    /*let activate = () => {
+        document.getElementByID(id).innerHTML = "... or is it?";
+    document.getElementsByTagName("p").style.color='cyan';
+    };*/
+    function activate() {
+        document.getElementByID(id).innerHTML = "... or is it?";
+        document.getElementsByTagName("p").style.color='cyan';
+        build();
+    }
+
+    /*
+    * innerHTML()
+    * document.write()
+    * window.alert()
+    * console.log()
+    * */
+
+    let car = {manufacturer:"Ford", model:"F150", color:"Red", year:"2007"};
+    let build = () => {
+       document.getElementById("car-manufacturer").innerHTML=car.manufacturer;
+    }
+</script>
+
+<p>
+    This is only a test...
+</p>
+<p id="demo">
+</p>
+<button type="button" onclick="activate()">
+    Button!
+</button>
+<hr/>
+<div class="car">
+    <div id="car-manufacturer"></div>
+</div>

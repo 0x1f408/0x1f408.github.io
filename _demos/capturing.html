@@ -1,0 +1,20 @@
+---
+layout: post
+permalink: /demo/capturing/
+title: Capturing Demo
+subtitle: Introduction to Capturing
+---
+<div>
+    <p>Open developer console (<code>F12</code>) to see output.</p>
+    <form id="form">
+        Click here
+    </form>
+</div>
+<script>
+    // Set click handlers on every element in the document to see which are working
+    for(let elem of document.querySelectorAll('*')){
+        elem.addEventListener("click", e => console.log(`Capturing: ${elem.tagName}`), true);
+        elem.addEventListener("click", e => console.log(`Bubbling: ${elem.tagName}`));
+    }
+
+</script>

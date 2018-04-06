@@ -1,69 +1,43 @@
-<!-- Side navigation bar -->
-<div class="container-fluid sidebar">
-    <nav class="sidebar-nav">
-        <!--<button type="button" class="sidebar-toggler" data-target="#navbar-collapsible" aria-expanded="false">
-        <span class="sr-only">Toggle navigation pane</span>
-        <span class="navbar-toggler-icon"></span>
-        </button>-->
+<!-- Sidebar -->
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="#">
+                Sidebar
+            </a>
+        </li>
+        <!-- Navigation links-->
+        {% for page in site.pages %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ page.permalink }}">
+                {{ page.title }}
+            </a>
+        </li>
+        {% endfor %}
 
-        <div class="sidebar-collapsible" id="sidebar-collapse">
-            <!-- Sidebar Header -->
-            <div id="sidebar-header">
-                <!--header image, text-->
-            </div>
+        {% assign i = 0 %}
+        {% for collection in site.collections %}
+        {% unless collection.label contains 'pages' %}
+        {% unless collection.label contains 'posts' %}
+        <!-- todo: if collection has an index page defined, link to it here-->
+        <li class="nav-item">{{collection.label}}</li>
+        <ul class="list-unstyled components">
+            {% for doc in collection.docs %}
+            {% unless doc.path contains 'index' %}
+            <a href="{{doc.permalink}}">
+                <li class="nav-item">{{doc.title}}</li>
+            </a>
+            {% endunless %}
+            {% endfor %}
+        </ul>
+        {% endunless %}
+        {% endunless %}
+        {% assign i = i | plus: 1 %}
+        {% endfor %}
+    </ul>
+</nav>
+<!-- /#sidebar-wrapper -->
 
-            <!-- Main links -->
-            <ul class="sidebar-nav">
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/">Home</a></li>
-                {% for page in site.pages %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ page.permalink }}">
-                            {{ page.title }}
-                        </a>
-                    </li>
-                {% endfor %}
-
-                {% comment %}
-                Iterate through each of our collections, excluding 'pages' and 'posts'.
-
-                Provide the label collection, a link to its index (if it exists),
-                and a sub-list of the docs in that collection, with links to the
-                appropriate pages.
-
-                {% endcomment %}
-                <!-- todo: add dividing line to ul.sidebar-nav::after
-                    may add that as a separate class -->
-                {% assign i = 0 %}
-                {% for collection in site.collections %}
-                    <!-- todo: exclude 'pages' and 'posts' -->
-                    {% unless collection.label contains 'pages' %}
-                        {% unless collection.label contains 'posts' %}
-                            <!-- todo: if collection has an index page defined, link to it here-->
-                            <li>{{collection.label}}</li>
-                            <ul class="sidebar-nav subnav">
-                                {% for doc in collection.docs %}
-                                    {% unless doc.path contains 'index' %}
-                                    <!-- todo: provide permalink here -->
-                                    <a href="{{doc.permalink}}">
-                                        <li>{{doc.title}}</li>
-                                    </a>
-                                    {% endunless %}
-                                {% endfor %}
-                            </ul>
-                        {% endunless %}
-                    {% endunless %}
-                    {% assign i = i | plus: 1 %}
-                {% endfor %}
-
-            </ul>
-
-            <div id="sidebar-copyright">
-                <!-- todo: define more of this in _config,yml -->
-                &copy; {{ site.startyear }}
-                {% if site.date %}-{{ today | date: "%Y" }} {% endif %}
-                {{ site.author }}<br/>
-                Content available under the <a href="/LICENSE.txt" target="_blank">MIT License</a>.
-            </div>
-        </div>
-    </nav>
-</div>
+{% comment %}
+Note: the JS to control this is in _includes/header.html
+{% endcomment %}

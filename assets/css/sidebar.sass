@@ -1,0 +1,85 @@
+$sidebar-width: 250px
+$sidebar-transition: all 0.675s ease
+
+body
+  overflow-x: hidden
+
+// Wrapper positioning transitions (for sidebar)
+#wrapper
+  padding-left: 0
+  -webkit-transition: $sidebar-transition
+  -moz-transition: $sidebar-transition
+  -ms-transition: $sidebar-transition
+  -o-transition: $sidebar-transition
+  transition: $sidebar-transition
+  &.toggled
+    padding-left: $sidebar-width
+  &.toggled
+    #sidebar-wrapper
+      width: $sidebar-width
+    #page-content-wrapper
+      position: absolute
+      margin-right: -$sidebar-width
+  #sidebar-wrapper
+    z-index: 2
+    position: fixed
+    left: $sidebar-width
+    width: 0
+    height: 100%
+    margin-left: -$sidebar-width
+    overflow-y: auto
+    background: #000
+    -webkit-transition: $sidebar-transition
+    -moz-transition: $sidebar-transition
+    -ms-transition: $sidebar-transition
+    -o-transition: $sidebar-transition
+    transition: $sidebar-transition
+  #page-content-wrapper
+    width: 100%
+    position: absolute
+    padding: 15px
+
+// Sidebar appearance
+.sidebar-nav
+  position: absolute
+  top: 0
+  width: $sidebar-width
+  margin: 0
+  padding: 0
+  list-style: none
+  li
+    text-indent: 1.25em
+    line-height: 2.5em
+    a
+      display: block
+      text-decoration: none
+      color: #999999
+      &:hover
+        text-decoration: none
+        color: #ffffff
+        background: rgba(255,255,255,0.2)
+        &:active, &:focus
+          text-decoration: none
+  .sidebar-brand
+    a
+      color: #999999
+      &:hover
+        color: #fff
+        background: none
+
+// @media queries
+@media(min-width: 768px)
+  #wrapper
+    padding-left: 0
+    &.toggled
+      padding-left: $sidebar-width
+      #sidebar-wrapper
+        width: $sidebar-width
+      #page-content-wrapper
+        position: relative
+        margin-right: 0
+    #sidebar-wrapper
+      width: 0
+    #page-content-wrapper
+      padding: 20px
+      position: relative

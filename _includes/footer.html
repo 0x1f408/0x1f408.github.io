@@ -1,12 +1,13 @@
-<footer>
+<footer class="footer">
     <div class="container-fluid">
         <div class="align-left transparency-md">
-            <a class="nav-link" href="https://github.com/0x1f408/0x1f408.github.io/" target="_blank">View Source</a><br/>
+            <a class="nav-link" href="https://github.com/0x1f408/0x1f408.github.io/" target="_blank">View Source</a>
             <a class="nav-link" href="https://github.com/0x1f408/0x1f408.github.io/issues" target="_blank">Report Issues</a>
         </div>
 
         <div class="align-right transparency-md"> <!-- social media links -->
             {% for entry in site.data.socialsites %}
+
                 <a href="{{ entry.link }}" title="Follow me on {{ entry.name }}" target="_blank">
                     <img class="icon-sm" src="../../assets/img/icons/{{ entry.icon }}"/>
                 </a>
