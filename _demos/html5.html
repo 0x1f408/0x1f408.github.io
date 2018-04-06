@@ -1,0 +1,106 @@
+---
+layout: post
+permalink: /demo/html5/
+title: HTML5 & Bootstrap
+subtitle: Demonstration of new HTML5 elements
+---
+<section>
+    <h3>SVG</h3>
+    <!--SVG demo; Style at bottom of page-->
+
+    <svg id="svgdemo">
+        <circle cx="50" cy="50" r="50" fill="#121516" />
+    </svg>
+</section>
+<section>
+    <h3>Forms</h3>
+    <form>
+        <div class="row">
+            <div class="col col-span-2">
+                <h2>Simple Signup</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" id="firstname" placeholder="First name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="lastname" placeholder="Last name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email: </label>
+            <input type="email" class="form-control" id="email" placeholder="me@example.com">
+        </div>
+        <div class="form-group">
+            <label for="pass">Password: </label>
+            <input type="password" class="form-control" id="pass">
+        </div>
+    </form>
+</section>
+
+<section>
+    <h3>Inline Forms</h3>
+    <form>
+        <h2>Inline Form</h2>
+        <div class="form-group form-inline">
+            <label for="name">Name (optional):</label>
+            <input type="text" id="name" class="form-control col-md-6 col-sm-12">
+        </div>
+        <div class="form-group form-inline">
+            <label for="feedback">Feedback:</label>
+            <input type="text" id="feedback" class="form-control col-md-6 col-sm-12">
+        </div>
+    </form>
+</section>
+<style>
+    #svgdemo{
+        position: relative;
+        height: 200px;
+        left: 50%;
+        -webkit-transform: translateX(-20%);
+        -moz-transform: translateX(-20%);
+        -ms-transform: translateX(-20%);
+        -o-transform: translateX(-20%);
+        transform: translateX(-20%);
+    }
+</style>
+
+<section>
+    <h3>Tables</h3>
+    <table class="table table-dark table-striped">
+        <thead>
+        <th scope="col">Link</th>
+        <th scope="col">Type</th>
+        <th scope="col">Description</th>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">
+                <a href="https://getbootstrap.com/docs/4.0/getting-started/" target="_blank">BS Docs</a>
+            </th>
+            <td>Bootstrap</td>
+            <td>An introduction to bootstrap, with examples.</td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <a href="https://developer.mozilla.org/en-US/">
+                    MDN
+                </a>
+            </th>
+            <td>HTML5/CSS</td>
+            <td>Mozilla Developer Network's documentation for HTML/CSS</td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <a href="https://jsonlint.com" target="_blank">
+                    JSON Lint
+                </a>
+            </th>
+            <td>JSON Validation</td>
+            <td>Free online JSON validation & formatting tool.</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

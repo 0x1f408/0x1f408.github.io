@@ -1,10 +1,8 @@
 <!-- Sidebar -->
 <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-            <a href="#">
-                Sidebar
-            </a>
+        <li class="sidebar-brand sidebar-header">
+            Navigation
         </li>
         <!-- Navigation links-->
         {% for page in site.pages %}
@@ -19,8 +17,9 @@
         {% for collection in site.collections %}
         {% unless collection.label contains 'pages' %}
         {% unless collection.label contains 'posts' %}
-        <!-- todo: if collection has an index page defined, link to it here-->
-        <li class="nav-item">{{collection.label}}</li>
+        <li class="nav-item">
+            <a href="/{{collection.label}}/">{{collection.label}}</a>
+        </li>
         <ul class="list-unstyled components">
             {% for doc in collection.docs %}
             {% unless doc.path contains 'index' %}

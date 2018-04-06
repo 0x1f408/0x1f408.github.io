@@ -4,8 +4,23 @@ permalink: /demo/xml/
 title: XML Demo
 subtitle: Introduction to eXtensible Markup Language
 ---
+<section>
+    <h3>Bookstore:</h3>
+    <p>
+        The below block consists of elements taken from an external .xml file, located under <code><a href="/assets/data/bookstore.xml">
+        /assets/data/bookstore.xml</a></code>.
+    </p>
+    <code id="demo">
+
+    </code>
+</section>
+<style>
+    #demo {
+        border: 1px solid rgba(76,76,76,0.2);
+        background-color: rgba(76,76,76,0.1);
+    }
+</style>
 <script>
-    // NEW
     let parseXml = function(xmlStr) {
             return ( new window.DOMParser() ).parseFromString(xmlStr, "text/xml");
         };
@@ -41,16 +56,3 @@ subtitle: Introduction to eXtensible Markup Language
     };
 
 </script>
-
-<p id="demo">
-
-</p>
-
-<pre>
-Typical DOM properties:
-x.nodeName
-x.nodeValue
-x.parentNode
-x.childNodes
-x.attributes
-</pre>
