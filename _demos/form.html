@@ -1,0 +1,46 @@
+---
+layout: post
+permalink: /demo/form/
+title: Form Demo
+subtitle: Demonstration of inline forms using HTML5/CSS3 & Bootstrap
+---
+<form>
+    <div class="row">
+        <div class="col col-span-2">
+            <h2>Simple Signup</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" id="firstname" placeholder="First name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" id="lastname" placeholder="Last name">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email: </label>
+        <input type="email" class="form-control" id="email" placeholder="me@example.com">
+    </div>
+    <div class="form-group">
+        <label for="pass">Password: </label>
+        <input type="password" class="form-control" id="pass">
+    </div>
+</form>
+
+<form>
+    <h2>Inline Form</h2>
+    <div class="form-group form-inline">
+        <label for="name">Name (optional):</label>
+        <input type="text" id="name" class="form-control col-md-6 col-sm-12">
+    </div>
+    <div class="form-group form-inline">
+        <label for="feedback">Feedback:</label>
+        <input type="text" id="feedback" class="form-control col-md-6 col-sm-12">
+    </div>
+</form>
+
+<style>
+    form {border: 1px solid cyan; }
+</style>

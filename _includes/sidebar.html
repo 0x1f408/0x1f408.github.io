@@ -44,7 +44,9 @@
                                 {% for doc in collection.docs %}
                                     {% unless doc.path contains 'index' %}
                                     <!-- todo: provide permalink here -->
-                                    <li>{{doc.title}}</li>
+                                    <a href="{{doc.permalink}}">
+                                        <li>{{doc.title}}</li>
+                                    </a>
                                     {% endunless %}
                                 {% endfor %}
                             </ul>

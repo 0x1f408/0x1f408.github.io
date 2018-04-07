@@ -14,13 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: '0x1f408 Development'
-subtitle: 'Creating a better web.'
-
-# todo: make below images default to $assets/img/header_background.* and $assets/img/sidebar_background.*
-# there does not appear to be a convenient way to source these in main.sass (SASS error)
-#background: "/assets/img/index.png"
-#header:
-#sidebar_header:
+subtitle: ''
+#subtitle: 'Creating a better web.'
 
 description: >
   Home page and project listing for 0x1f408, an Atlanta-based web developer.
@@ -35,10 +30,6 @@ startyear: 2017
 
 # Define the site author
 author: 0x1f408
-
-# Do we also want to add something to define when the site was last updated?
-# We could probably define the above (`year`) with the same
-#last_update:
 
 # Where do we look for assets? (images, js, etc)
 assets: "/assets" # Make sure this doesn't have a following "/".
@@ -67,6 +58,9 @@ exclude:
 
 # List our projects:
 collections:
+  demos:
+    output: true
+    permalink: /demo/:name/
   projects:
     output: true
     permalink: /project/:name/
@@ -81,6 +75,14 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+  -
+    scope:
+      path: "demos"
+      type: "posts"
+    values:
+      layout: "post"
+      title: "Unnamed Demo"
+      subtitle: ""
   -
     scope:
       path: "projects"

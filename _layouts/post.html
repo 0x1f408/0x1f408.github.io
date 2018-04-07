@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% comment %}
+Blog post layout
+{% endcomment %}
+<html lang="en">
+{% include head.html %}
+    <body>
+    {% include header.html %}
+
+    <div class="container-fluid">
+        {% include sidebar.html %}
+            <!--Article content-->
+            <div id="article-header">
+                <h1 class="article-title">{{page.title}}</h1>
+                <h2 class="article-subtitle">{{page.subtitle}}</h2>
+                <div id="content-main">
+                    {{content}}
+                </div>
+            </div>
+    </div>
+    {% include footer.html %}
+    </body>
+</html>
