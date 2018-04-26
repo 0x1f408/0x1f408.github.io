@@ -13,25 +13,23 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: '0x1f408 Design'
-subtitle:
-#logo:
-#header:
-#logo_title:
-#logo_tab:
-email: '0x1f408 at protonmail dot com'
+title: '0x1f408 Development'
+subtitle: ''
+#subtitle: 'Creating a better web.'
+
 description: >
-  Home page and project listing for 0x1f408, an Atlanta-based designer & web developer.
-baseurl: "" # the subpath of your site, e.g. /blog
-# @todo: enable SSL/https for github-pages
-url: "http://0x1f408.me" # the base hostname & protocol for your site, e.g. http://example.com
+  Home page and project listing for 0x1f408, an Atlanta-based web developer.
+# the base hostname & protocol for your site, e.g. http://example.com
+url: "http://0x1f408.me"
 
-# This probably isn't needed, but I wanted to add an easy way to grab year for copyright info, etc.
-year: 2017
+# the subpath of your site, e.g. /blog
+baseurl: ""
 
-# Do we also want to add something to define when the site was last updated?
-# We could probably define the above (`year`) with the same
-#last_update:
+# Define the year we first put the site up
+startyear: 2017
+
+# Define the site author
+author: 0x1f408
 
 # Where do we look for assets? (images, js, etc)
 assets: "/assets" # Make sure this doesn't have a following "/".
@@ -54,15 +52,21 @@ exclude:
   - .gitignore
   - Gemfile
   - Gemfile.lock
+  - .iml
+  - .sass_cache/
+  - candidiates/
 
 # List our projects:
 collections:
   projects:
     output: true
     permalink: /project/:name/
-  keys:
+  pages:
     output: true
-    permalink: /key/:name/
+    permalink: /:path/
+  guides:
+    output: true
+    permalink: /guide/:name
 
 defaults:
   -
@@ -71,16 +75,17 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-      author: "0x1f408"
+  -
+    scope:
+      path: "guides"
+      type: "posts"
+    values:
+      layout: "post"
+      title: "Unnamed Guide"
+      subtitle: ""
   -
     scope:
       path: "projects"
       type: "pages"
     values:
       layout: "project"
-  -
-    scope:
-      path: "keys"
-      type: "pages"
-    values:
-      layout: "default"

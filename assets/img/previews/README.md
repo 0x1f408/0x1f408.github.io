@@ -1,0 +1,1 @@
+This directory is intended for preview images for entries under `_projects`.

@@ -1,7 +1,14 @@
 _site
 .sass-cache
 .jekyll-metadata
-.idea
 
-# Temporary:
-assets/*.gemspec
+# Editor:
+.idea
+*.iml
+
+# Ruby
+Gemfile.lock
+
+# Temporary files
+tmp/*
+!/tmp/.gitkeep

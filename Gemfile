@@ -11,8 +11,8 @@ source "https://rubygems.org"
 
 # Using this for GitHub Pages; to upgrade, run `bundle update github-pages`.
 # Uncomment `gem 'jekyll'` & remove `gem 'github-pages'` for other uses
-gem "github-pages", group: :jekyll_plugins
-# gem 'jekyll', '3.5.2'
+# gem "github-pages", group: :jekyll_plugins
+gem 'jekyll', '3.5.2'
 
 # Dependency for markdown handling
 gem 'commonmarker', "0.17.6"
@@ -42,4 +42,3 @@ if Gem.win_platform?
     gem "jekyll-livereload"
   end
 end
-

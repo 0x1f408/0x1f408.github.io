@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{%include head.html%}
+<body>
+<!-- Header -->
+{%include header.html%}
+
+<main id="wrapper" class="container-fluid">
+    <!-- Sidebar -->
+    {% include sidebar.html %}
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+         {{content}}
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</main>
+<!-- /#wrapper -->
+{% include footer.html %}
+</body>
+</html>

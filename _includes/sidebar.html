@@ -1,34 +1,42 @@
-<!-- Side navigation bar template -->
-<div class="sidebar-container container container-fluid clearfix">
-    <nav class="sidebar sidebar-expand-md">
-        <!--<button type="button" class="sidebar-toggler" data-target="#navbar-collapsible" aria-expanded="false">
-            <span class="sr-only">Toggle navigation pane</span>
-            <span class="navbar-toggler-icon"></span>
-        </button>--><!-- todo: update the above from navbar-* to sidebar-* -->
+<!-- Sidebar -->
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand sidebar-header">
+            Navigation
+        </li>
+        <!-- Navigation links-->
+        {% for page in site.pages %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ page.permalink }}">
+                {{ page.title }}
+            </a>
+        </li>
+        {% endfor %}
 
-        <div class="sidebar-collapsible" id="sidebar-collapse">
-            <div class="sidebar-header">
-                <!-- header image for the navigation bar -->
-            </div>
+        {% assign i = 0 %}
+        {% for collection in site.collections %}
+        {% unless collection.label contains 'pages' %}
+        {% unless collection.label contains 'posts' %}
+        <li class="nav-item">
+            <a href="/{{collection.label}}/">{{collection.label}}</a>
+        </li>
+        <ul class="list-unstyled components">
+            {% for doc in collection.docs %}
+            {% unless doc.path contains 'index' %}
+            <a href="{{doc.permalink}}">
+                <li class="nav-item">{{doc.title}}</li>
+            </a>
+            {% endunless %}
+            {% endfor %}
+        </ul>
+        {% endunless %}
+        {% endunless %}
+        {% assign i = i | plus: 1 %}
+        {% endfor %}
+    </ul>
+</nav>
+<!-- /#sidebar-wrapper -->
 
-            <!-- todo: look at .nav definitions in bootstrap.css; currently shows bullets-->
-            <ul class="sidebar-nav"><!-- docs suggested .mr-auto-->
-                <!--@note: add .active and <span class="sr-only>current</span> to active element-->
-                <!-- @todo: will need to automate generating the below from /_data/:filename.yml before publishing theme -->
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/about/">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/contact/">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/projects/">Projects Home</a></li>
-                <ul class="sidebar-nav subnav" id="projects-subnav">
-                    <!-- @todo: will need to automate generating the below from /_data/:filename.yml before publishing theme -->
-                    <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/project/0x1f408">0x1f408.me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/project/refurence">Refurence.me</a></li>
-                </ul>
-            </ul>
-            <div id="sidebar-copyright">
-                <!-- this should go at the bottom of the sidebar -->
-                <p>&copy;2017 {% if site.year != 2017 %}- {{ site.year }}{% endif %} 0x1f408 Designs</p>
-                <p>Content available under the <a href="/LICENSE.txt" target="_blank">MIT License</a>.</p>
-            </div>
-        </div>
-    </nav>
-</div>
+{% comment %}
+Note: the JS to control this is in _includes/header.html
+{% endcomment %}

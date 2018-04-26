@@ -1,0 +1,275 @@
+// todo: define our font stack
+// todo: finish transferring stuff to this file from main-old.sass
+// todo: reorganize this to be mobile-first
+
+////////////////////
+// 1.1 Variables  //
+////////////////////
+// $font-stack:
+// $code-font-stack:
+
+// @media cut-offs
+$cutoff-xs: 576px //less than: 0-575
+$cutoff-sm: 760px //less than: 576-759
+$cutoff-md: 992px //less than: 760-991
+$cutoff-lg: 1200px //less than: 992-1199
+//anything >=1200px is XL
+
+// Background definitions
+$main-bg: url('/assets/img/bg/index.png')
+
+// Color definitions
+// todo: switch to a lighter theme, possibly provide these as options?
+// twitter: #222426 #e1e8ed #111 #8fcaec
+// discord: #202225 #2f3136 #36393e #41454e #ffffff
+$background: #000
+$foreground: rgba(34,36,38,0.3) //#222426
+$foreground-visible: rgba(34,36,38,0.5)
+$text: #e1e8ed
+$text-accent: orange // later: better orange-ish color?
+$text-highlight: #111
+$anchor: #8fcaec
+$foreground-hover: #e1e8ed
+$border: rgba(225,232,237,0.2)
+
+// Sidebar
+$sidebar-width: 250px
+$sidebar-transition: all 0.675s ease
+
+////////////////////
+// 2.1 Globals    //
+////////////////////
+// Zero everything out
+html, body, div, p, img, code, em, strong, u, h1, h2, h3, h4, h5, a, ul, ol, li, header, footer, span, small, strike, sub, sup, dl, dt, dd, tr, td, th, caption, label, legend, form
+  font-family: inherit
+  font-size: 100%
+  font-style: inherit
+  font-weight: inherit
+  margin: 0
+  padding: 0
+  border: 0
+
+html, body
+  height: 100%
+
+body
+  overflow-x: hidden
+  overflow-y: auto //todo: define custom scrollbar
+  // todo: compress the below to a single line
+  background: $background
+  background-image: url("/assets/img/bg/index.png")
+  background-size: cover
+  background-repeat: no-repeat
+  color: $text
+  display: flex
+  flex-direction: column
+
+// Links
+// NOTE: we need to be more specific about this when using Bootstrap
+
+// Lists
+ul, ol, li
+  list-style: none
+  display: block // do we need this?
+  > ul, ol // Sub-lists
+    padding-left: 0.667em
+
+// 'Code' blocks
+code
+  display: inline-block
+  color: $text-highlight
+  background-color: $foreground-hover
+
+// Hide sections from everything but screen readers
+.sr-only
+  width: 0
+  height: 0
+  position: absolute
+  overflow: hidden
+  border: 0
+  padding: 0
+
+////////////////////
+// 3.2 Rough Layout//
+////////////////////
+// Flex containers
+.container-fluid
+  flex: 1 0 auto
+  &, header, footer
+    width: 100%
+    display: flex
+  > div
+    flex: 1
+
+// Force right alignment
+.align-right
+  text-align: end
+
+// Icons
+img.icon-sm
+  height: 24px
+  width: auto
+
+////////////////////
+// 3.3 Borders    //
+////////////////////
+//.site-header
+  border-bottom: 1px solid $border
+//.sidebar-container
+  border: 1px solid $border
+//.sidebar-copyright
+  border-top: 1px solid $border
+//.content-main
+  border: 1px 0px 1px solid $border
+//.footer
+  border-top: 1px solid $border
+
+////////////////////
+// 4.0 Detail     //
+////////////////////
+// 4.1 Header
+header
+  border-bottom: 1px solid cyan
+  border-radius: 0 0 8px 8px
+  min-height: 3.75em
+  text-align: center
+  letter-spacing: 0.125em
+  background-color: $foreground
+  a
+    text-decoration: none
+    color: $text
+  .title-container
+    /* todo: define left padding elsewhere (needs to be consistent with sidebar, et al*/
+    //padding-left: 0.25em
+    h1
+      font-size: 1.675em
+    h2
+      display: block
+      font-size: 0.875em
+      color: $text-accent
+      font-style: oblique
+
+
+// 4.2 Footer
+footer
+  background-color: $foreground
+  div
+    display: inline-block
+
+// 4.3 Sidebar
+// Wrapper positioning transitions (for sidebar)
+#wrapper
+  a
+    text-decoration: none
+    color: $text-accent
+    &, &:hover, &:visited, &:active
+      text-decoration: none
+  padding-left: 0
+  -webkit-transition: $sidebar-transition
+  -moz-transition: $sidebar-transition
+  -ms-transition: $sidebar-transition
+  -o-transition: $sidebar-transition
+  transition: $sidebar-transition
+  &.toggled
+    padding-left: $sidebar-width
+  &.toggled
+    #sidebar-wrapper
+      width: $sidebar-width
+    #page-content-wrapper
+      position: absolute
+      margin-right: -$sidebar-width
+  #sidebar-wrapper
+    z-index: 2
+    position: fixed
+    left: $sidebar-width
+    width: 0
+    height: 100%
+    margin-left: -$sidebar-width
+    overflow-y: auto
+    background: $foreground
+    -webkit-transition: $sidebar-transition
+    -moz-transition: $sidebar-transition
+    -ms-transition: $sidebar-transition
+    -o-transition: $sidebar-transition
+    transition: $sidebar-transition
+    &:hover
+      background: $foreground-visible
+      -webkit-transition: 1.5s
+      -moz-transition: 1.5s
+      -ms-transition: 1.5s
+      -o-transition: 1.5s
+      transition: 1.5s
+  #page-content-wrapper
+    width: 100%
+    position: absolute
+    padding: 15px
+
+// Sidebar appearance
+.sidebar-nav
+  position: absolute
+  top: 0
+  width: $sidebar-width
+  margin: 0
+  padding: 0
+  list-style: none
+  li
+    text-indent: 1.25em
+    line-height: 2.5em
+    a
+      display: block
+      text-decoration: none
+      color: $text
+      &:hover
+        text-decoration: none
+        color: $text-highlight
+        background: $foreground-hover
+      &:active, &:focus
+        text-decoration: none
+  .sidebar-brand
+    a
+      color: $text
+      &:hover
+        color: $text-highlight
+        background: none
+
+// @media queries
+@media(min-width: 768px)
+  #wrapper
+    padding-left: 0
+    &.toggled
+      padding-left: $sidebar-width
+      #sidebar-wrapper
+        width: $sidebar-width
+      #page-content-wrapper
+        position: relative
+        margin-right: 0
+    #sidebar-wrapper
+      width: 0
+    #page-content-wrapper
+      padding: 20px
+      position: relative
+
+// 4.3 Main Content
+
+////////////////////
+// 5.1 @media     //
+////////////////////
+// 5.1 Window width < $cutoff-sm
+@media (max-width: $cutoff-sm)
+  .site-header
+    .site-title-wrapper
+      min-height: 2em
+  #content-main
+    padding-left: 0
+
+// 5.2 Window width <= $cutoff-md
+@media (max-width: $cutoff-md)
+
+// 5.3 Window width <= $cutoff-lg
+@media (max-width: $cutoff-lg)
+  .site-header
+    .site-title-wrapper
+      min-height: 4em
+
+// 5.4 Window width > $cutoff-lg
+@media (min-width: $cutoff-lg)
