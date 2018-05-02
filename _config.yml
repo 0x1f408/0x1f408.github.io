@@ -67,6 +67,9 @@ collections:
   pages:
     output: true
     permalink: /:path/
+  guides:
+    output: true
+    permalink: /guide/:name
 
 defaults:
   -
