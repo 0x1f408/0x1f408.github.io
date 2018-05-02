@@ -58,9 +58,6 @@ exclude:
 
 # List our projects:
 collections:
-  demos:
-    output: true
-    permalink: /demo/:name/
   projects:
     output: true
     permalink: /project/:name/
@@ -80,11 +77,11 @@ defaults:
       layout: "default"
   -
     scope:
-      path: "demos"
+      path: "guides"
       type: "posts"
     values:
       layout: "post"
-      title: "Unnamed Demo"
+      title: "Unnamed Guide"
       subtitle: ""
   -
     scope:
