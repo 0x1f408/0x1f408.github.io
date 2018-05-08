@@ -83,6 +83,7 @@ defaults:
       layout: "post"
       title: "Unnamed Guide"
       subtitle: ""
+      desc: ""
   -
     scope:
       path: "projects"

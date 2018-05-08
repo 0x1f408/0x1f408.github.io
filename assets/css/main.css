@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   background: #000;
-  background-image: url("/assets/img/bg/index.png");
+  /*background-image: url("/assets/img/bg/index.png") */
   background-size: cover;
   background-repeat: no-repeat;
   color: #e1e8ed;

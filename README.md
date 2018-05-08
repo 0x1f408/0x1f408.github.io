@@ -1,7 +1,7 @@
 0x1f408.me
 ===
 
-Jekyll blog for 0x1f408, a.k.a. **Kit**, an Atlanta-based web developer.
+Jekyll portfolio for 0x1f408, a.k.a. **Kit**, a Washington, DC-based web developer.
 
 ## About the site:
 #### What's Here:

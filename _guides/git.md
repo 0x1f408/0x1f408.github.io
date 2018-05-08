@@ -4,34 +4,28 @@ permalink: /guide/git/
 title: Version Control Systems & Git
 subtitle: Quick overview of Version Control Systems and creating your first project on Git
 ---
-
+## 0x1f408.me
 <!-- todo: refactor this for this project -->
-# Revature-Tantalum
-### Business Process Management application for a large-scale metal distributor
 
-Project repositories located at [GitLab](https://gitlab.com/tantalum/).
+### Basics of Version Control Systems
 
-* [Database design documentation](https://gitlab.com/tantalum/database-design)
+#### What
 
-* [Main project files](https://gitlab.com/tantalum/tantalum-main)
+#### Why
 
-* [Test data generator](https://gitlab.com/tantalum/testdata)
+### Getting started: GitHub
 
-### Getting started: GitLab
-
-#### 1. Create an account at [GitLab](https://gitlab.com/). 
-You've already done this. By default, project members will have role 'Developer,' which
-will allow you full read/write access to project files.
+#### 1. Create an account at [GitHub](https://github.com).
 
 #### 2. Download & install Git.
-This is what will actually let you read/write to GitLab.
+This is what will actually let you read/write to GitHub.
 
 * **Windows**: Download [Git For Windows](https://gitforwindows.org).
 
-* **\*Nix**: Download Git via apt/yum: `apt-get install git`
+* **\*Nix**: Download Git via aptitude (or package manager of your choice): `apt-get install git`
 
 #### 2. Generate an SSH key.
-You will need to do this to be able to write to GitLab. On Windows, `ssh-keygen` is
+While not required, this greatly simplifies interacting with GitHub. On Windows, `ssh-keygen` is
 installed alongside Git, or included with OpenSSH on \*Nix.
 
 1. Run `ssh-keygen`.
@@ -39,15 +33,21 @@ installed alongside Git, or included with OpenSSH on \*Nix.
 * On Windows, you may need to run this from Git Bash, depending on your installation
 settings.
 
-2. Set a passphrase and save private key to `C:/Users/%NAME%/.ssh/id_rsa`
+*For the below, `~` is used as a shortcut for your home directory*:
 
-3. Generate a public key and save it to `C:/Usrs/%NAME%/.ssh/id_rsa.pub`.
+  * **Windows**: `%USERPROFILE%`, or `C:\Users\%USER%\`
+  
+  * **Linux**: `~` or `/home/$USER/`
+    
+2. Set a passphrase and save private key to `~/.ssh/id_rsa`
+
+3. Generate a public key and save it to `~/.ssh/id_rsa.pub`.
 
 4. Copy public key. This should be `ssh-rsa <1024-4096 digit key> <nick@device>`.
 
-5. Make sure you copied the **public** key.
+5. Make sure you copied the **public** key (and not the private).
 
-#### 3. Save SSH key to GitLab
+#### 3. Save SSH key to GitHub
 
 1. Open GitLab.
 

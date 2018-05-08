@@ -27,6 +27,36 @@ Create an `Administrators` group, and assign it `AdministratorAccess`.
 6. `Launch` the instance. It will take some time to load, and will back up immediately initial creation. Once it's avaiable,
 log in to the provided address using the master user you defined previously, from an SQL client of your choice.
 
+**Reorganize**
+Add whitelisted IPs: Create a group and add rules to it to allow access.
+Here, I whitelisted the Appian instance, and the VPS running JIRA.
+
+https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html#AddRemoveRules
+
+1. Navigate to `Security Groups`, under *Security* on the left navigation bar.
+
+2. Create a new group, using the `Create Security Group` button (top left). Assign it a name, a group, and a description,
+and assign it to your VPC.
+
+3. Select the new group, and select the `Inbound Rules` tab from the Edit Group section below.
+
+4. `Edit` and add your whitelisted IPs or ranges.
+
+    * Type: The type of connection (MySQL/Aurora(3306))
+    * Protocol: The protocol to whitelist (TCP(6))
+    * Port: The port to whitelist (for MySQL, 3306)
+    * Range: An IP range and prefix (e.g.: /24). `0.0.0.0/0` will whitelist all IPs.
+    * Description: A brief description of the specified range
+
+5. Save.
+
+6. Navigate back to your RDS instance's dashboard; select `Modify` from under the `Instance Actions` dropdown (top right).
+
+7. Under `Network and Security`, select the Security Group you just created from under the `Security Group` dropdown.
+
+8. Click `Continue`, then select `Apply Immediately` (if you don't want to wait until your next specified 
+maintenance window). Click `Modify DB Instance`. The RDS instance should reboot at this time, to apply changes.
+
 ## Follow-up
 
 1. Log into your domain provider, or CloudFlare, depending on where the name resolution for your domain is set up.
