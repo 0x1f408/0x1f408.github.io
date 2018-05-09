@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /guide/aws
+permalink: /guide/rds
 title: Amazon Web Services - RDS
 subtitle: Quick overview of Relational Database Services on AWS
 ---
