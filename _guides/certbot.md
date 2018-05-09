@@ -1,3 +1,10 @@
+---
+layout: post
+permalink: /guide/ssl
+title: Enabling SSL
+subtitle: Guide to enabling SSL for your domain, using Certbot
+---
+
 ##Install Certbot:
 
 ### Overview:
