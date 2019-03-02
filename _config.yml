@@ -64,9 +64,6 @@ collections:
   pages:
     output: true
     permalink: /:path/
-  guides:
-    output: true
-    permalink: /guide/:name
 
 defaults:
   -
@@ -75,15 +72,6 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-  -
-    scope:
-      path: "guides"
-      type: "posts"
-    values:
-      layout: "post"
-      title: "Unnamed Guide"
-      subtitle: ""
-      desc: ""
   -
     scope:
       path: "projects"
