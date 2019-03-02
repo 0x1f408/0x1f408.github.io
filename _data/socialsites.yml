@@ -1,3 +1,5 @@
+# Links to be displayed in the lower right-hand corner of the screen, anywhere the footer is displayed
+# For each, provide a name for the linked service (e.g.: Mastodon), a link to the profile, and the name of the icon (under assets/images/icons)
 -
   name: "twitter"
   link: "https://twitter.com/0x1f408"
